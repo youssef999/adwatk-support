@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <base href="/adwatk-support/">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ادواتك — الدعم الفني. تواصل معنا بخصوص أي مشكلة تواجهك في التطبيق.">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="ادواتك">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>ادواتك — الدعم الفني</title>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    @font-face {
+      font-family: 'Cairo';
+      src: url('fonts/Cairo.ttf') format('truetype');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    html, body {
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #F5F5F5;
+    }
+
+    .boot {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      color: #3D3D3D;
+    }
+
+    .boot img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(47, 47, 47, 0.10);
+      background: #fff;
+    }
+
+    .boot .title {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .boot .spinner {
+      width: 28px;
+      height: 28px;
+      border: 3px solid #E5E5E5;
+      border-top-color: #F08628;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="boot" id="boot-screen">
+    <img src="icons/Icon-192.png" alt="ادواتك">
+    <p class="title">الدعم الفني</p>
+    <div class="spinner"></div>
+  </div>
+
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var boot = document.getElementById('boot-screen');
+      if (boot) boot.remove();
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
